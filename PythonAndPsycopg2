@@ -1,0 +1,21 @@
+!pip install psycopg2
+import psycopg2 as pg2
+
+conn = pg2.connect(database='dvdrental',user='postgres',password=secret) // connect method to etablish a connection
+cur = conn.cursor() // pointer 
+cur.execute('SELECT * FROM payment')  //execute sql queries
+
+cur.fetchone()  // fetch row
+cur.fetchmany() // fetch many rows
+cur.fetchall()  // fetch all rows
+
+data = cur.fetchmany(10)
+
+data[0][4]
+
+conn.close()
+
+** careful dangerous
+add = 'DROP TABLE' // crash database
+command = 'SELECT * FROM' + add
+cur.execute(command)

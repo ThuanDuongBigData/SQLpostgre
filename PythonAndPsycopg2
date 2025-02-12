@@ -19,3 +19,6 @@ conn.close()
 add = 'DROP TABLE' // crash database
 command = 'SELECT * FROM' + add
 cur.execute(command)
+
+
+https://wiki.postgresql.org/wiki/Psycopg2_Tutorial
